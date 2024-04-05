@@ -7,7 +7,7 @@ const Banner = () => {
             className='rounded-lg '
         >
             <div className='h-[300px] relative rounded-lg '>
-                <Image src='/banner.jpg' className='rounded-lg ' fill alt='banner' />
+                <Image priority src='/banner.jpg' className='rounded-lg ' fill alt='banner' />
             </div>
 
         </div>
