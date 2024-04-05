@@ -20,13 +20,13 @@ const ProductDetailPage = ({ params }: {
                 <div className='flex items-start flex-col md:flex-row gap-5 md:gap-10 md:px-10 px-3 py-5 md:py-10 bg-slate-100 w-full'>
                     <div className='flex flex-col items-center gap-5 md:gap-10 md:px-10 px-3 bg-slate-100 w-full h-full'>
                         <div className='relative h-80 w-80 '>
-                            <Image src={"/ip.avif"} fill alt={product.name} className=' object-contain' />
+                            <Image src={"/ip.avif"} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill alt={product.name} className=' object-contain' />
                         </div>
                         <div className='flex flex-col gap-5 w-full items-start '>
                             <h2 className='text-3xl text-slate-500 font-semibold'>{product.name}</h2>
                             <p className='text-xl text-slate-500 font-semibold'>${product.price}</p>
                             <div className='scale-125 ml-2'>
-                            <RatingStars value={product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length} />
+                                <RatingStars value={product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length} />
 
                             </div>
                         </div>
