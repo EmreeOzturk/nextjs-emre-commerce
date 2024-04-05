@@ -4,6 +4,8 @@ import ProductDetailContainer from '@/app/components/containers/ProductDetailCon
 import ProductReview from '@/app/components/reviews/ProductReview'
 import { products } from '@/data/Products'
 import Image from 'next/image'
+import { useCart } from '@/store/useCart'
+import QntController from '@/app/components/productDetail/QntController'
 const ProductDetailPage = ({ params }: {
     params: {
         productId: string
@@ -11,6 +13,7 @@ const ProductDetailPage = ({ params }: {
 }) => {
     const productId = params.productId
     const product = products.find((product) => product.id == productId)
+
     if (product === undefined) {
         return <h1>Product not found</h1>
     }
@@ -40,15 +43,7 @@ const ProductDetailPage = ({ params }: {
                             </h2>
                         </div>
                         <div className='flex justify-center gap-6 items-center'>
-                            {/* <div className='flex justify-center items-center hover:scale-110 transition-all border border-black shadow-md w-10 h-10 rounded-full text-3xl font-extrabold'>
-                                -
-                            </div> */}
-                            <div className='flex-1'>
-                                <button className='bg-slate-500 text-white w-full px-5 py-2 transition-all rounded-lg hover:bg-transparent border hover:border hover:border-slate-500 hover:text-slate-500'>Add to Cart</button>
-                            </div>
-                            {/* <div className='flex justify-center items-center hover:scale-110 border-black transition-all w-10 h-10 border shadow-md rounded-full text-3xl font-extrabold'>
-                                +
-                            </div> */}
+                            <QntController productId={productId} product={product} />
                         </div>
                     </div>
                 </div>
