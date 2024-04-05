@@ -30,7 +30,6 @@ const ProductDetailPage = ({ params }: {
                             <p className='text-xl text-slate-500 font-semibold'>${product.price}</p>
                             <div className='scale-125 ml-2'>
                                 <RatingStars value={product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length} />
-
                             </div>
                         </div>
                     </div>
@@ -42,9 +41,11 @@ const ProductDetailPage = ({ params }: {
                                 {product.inStock ? 'In Stock' : 'Out of Stock'}
                             </h2>
                         </div>
-                        <div className='flex justify-center gap-6 items-center'>
-                            <QntController productId={productId} product={product} />
-                        </div>
+                        {
+                            product.inStock && <div className='flex justify-center gap-6 items-center'>
+                                <QntController productId={productId} product={product} />
+                            </div>
+                        }
                     </div>
                 </div>
                 <Heading title='Reviews' />
