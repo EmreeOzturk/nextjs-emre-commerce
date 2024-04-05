@@ -1,7 +1,7 @@
 "use client"
 
 import { useCart } from "@/store/useCart"
-
+import Link from "next/link"
 const AddOrRemoveQnt = ({ productId }: { productId: string }) => {
 
     const quantity = useCart((state) => state.items.find((item) => item.id === productId)?.quantity)
@@ -33,6 +33,12 @@ const AddOrRemoveQnt = ({ productId }: { productId: string }) => {
                 }}
                 className='flex select-none justify-center items-center hover:scale-110 border-black transition-all w-10 h-10 border shadow-md rounded-full text-3xl font-extrabold'>
                 +
+            </div>
+
+            <div className="border rounded-lg bg-orange-500 px-4 py-2 cursor-pointer">
+                <Link href="/cart" className='text-xl select-none text-slate-500 font-semibold'>
+                    Go to Cart
+                </Link>
             </div>
         </div>
     )
