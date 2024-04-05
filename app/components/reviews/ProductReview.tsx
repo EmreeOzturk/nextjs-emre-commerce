@@ -13,7 +13,7 @@ const ProductReview: React.FC<ProductReviewProps> = (
         <div className="flex w-full md:w-1/3 shadow-lg pt-4 border rounded-lg gap-4 md:gap-10">
             <div className="flex flex-col gap-2 justify-center items-center">
                 <div className="w-10 h-10 relative border border-black rounded-full">
-                    <Image src="/ip.avif" alt="name" fill className="rounded-full" />
+                    <Image src="/ip.avif" alt="name" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="rounded-full" />
                 </div>
                 <div>
                     {review.user.name}
