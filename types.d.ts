@@ -31,3 +31,15 @@ export type User = {
   updatedAt: string;
   role: string;
 };
+
+export type CartProduct = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  brand: string;
+  category: string;
+  inStock: boolean;
+  image: string;
+  quantity: number;
+};
